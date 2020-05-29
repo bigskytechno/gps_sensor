@@ -1,0 +1,17 @@
+Install rasbian Buster (full)
+Copy file SSH to SD Card 
+Copy wpa_supplicant to SD Card
+Copy gps_sensor_app folder to SD Card (whole or zip)
+Open Putty in SSH mode and run this code to update pi
+sudo apt update && sudo apt full-upgrade
+Using putty, run this script to add dataplicity
+curl -s https://www.dataplicity.com/v06bz348.py | sudo python
+dataplicity@raspberrypi:/$ su pi
+Password: 
+pi@raspberrypi:/ $ sudo su
+Copy gps_sensor_app folder from boot to /home/pi
+cd /boot/
+sudo cp gps_sensor_app /home/pi/ -r
+or if zipped, unzip -r gps_sensor_app.zip /home/pi/ 
+root@raspberrypi:/# cd /home/pi/gps_sensor_app
+root@raspberrypi:/home/pi/gps_sensor_app# make install
